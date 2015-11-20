@@ -33,10 +33,24 @@ map <leader>l :wincmd l<CR>
 nnoremap <S-h> <S-^>
 nnoremap <S-l> <S-$>
 
+" Tab movement mods
+nmap <A-h> :tabp<CR>
+nmap <A-l> :tabn<CR>
+
 " Redo
 nmap r :redo<Enter>
+
+" Normal mode
+imap <leader>j<space> <Esc>
+
+ " Character limit line
+set colorcolumn=80
+
+" Turn off search highlighting
+map <leader>hh :noh
 ' > /home/vagrant/.vimrc.after
 
 # Vim-Tags (like Ctags)
-# sudo yum install -y ctags
-# git clone https://github.com/szw/vim-tags.git
+sudo yum install -y ctags
+cd /home/vagrant/vagrant_share
+ctags -R --exclude=temp --exclude=vendor --exclude=public
