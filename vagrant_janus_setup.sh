@@ -34,8 +34,9 @@ nnoremap <S-h> <S-^>
 nnoremap <S-l> <S-$>
 
 " Tab movement mods
-nmap <A-h> :tabp<CR>
-nmap <A-l> :tabn<CR>
+nmap <leader>t :tabnew<CR>
+map ff :tabprev<CR>
+map gg :tabnext<CR>
 
 " Redo
 nmap r :redo<Enter>
@@ -47,7 +48,7 @@ imap <leader>j<space> <Esc>
 set colorcolumn=80
 
 " Turn off search highlighting
-map <leader>hh :noh
+map <leader>oo :noh
 ' > /home/vagrant/.vimrc.after
 
 # Vim-Tags (like Ctags)
