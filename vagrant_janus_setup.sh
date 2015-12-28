@@ -18,7 +18,7 @@ printf '
 let mapleader=","
 
 " NERDTree
-nnoremap <leader>n :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
 
 " Color scheme
 color onedark
