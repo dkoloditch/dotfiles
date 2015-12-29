@@ -23,19 +23,13 @@ map <C-n> :NERDTreeToggle<CR>
 " Color scheme
 color onedark
 
-" Window/tab switching
-map <leader>h :wincmd h<CR>
-map <leader>j :wincmd j<CR>
-map <leader>k :wincmd k<CR>
-map <leader>l :wincmd l<CR>
-
 " Line movement mods
 nnoremap <S-h> <S-^>
 nnoremap <S-l> <S-$>
 
 " Tab movement mods
 nmap <leader>t :tabnew<CR>
-map ff :tabprev<CR>
+map GG :tabprev<CR>
 map gg :tabnext<CR>
 
 " Redo
@@ -48,7 +42,7 @@ imap <leader>j<space> <Esc>
 set colorcolumn=80
 
 " Turn off search highlighting
-map <leader>oo :noh
+" map <leader>oo :noh
 ' > /home/vagrant/.vimrc.after
 
 # Vim-Tags (like Ctags)
