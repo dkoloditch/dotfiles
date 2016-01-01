@@ -29,8 +29,8 @@ nnoremap <S-l> <S-$>
 
 " Tab movement mods
 nmap <leader>t :tabnew<CR>
-map FF :tabprev<CR>
-map GG :tabnext<CR>
+map DD :tabprev<CR>
+map FF :tabnext<CR>
 
 " Redo
 nmap r :redo<Enter>
