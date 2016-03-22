@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# install unzip
+sudo yum -y install unzip
+
 # create .janus directory for plugins and such
 mkdir /home/vagrant/.janus
 cd /home/vagrant/.janus
@@ -7,10 +10,23 @@ cd /home/vagrant/.janus
 # janus
 curl -L https://bit.ly/janus-bootstrap | bash
 
-# Fuzzy Finder
-wget "https://github.com/dkoloditch/dotfiles/blob/master/vim-l9.zip?raw=true"
+# L9 + Fuzzy Finder
+mkdir /home/vagrant/.janus/plugins/l9
+cd /home/vagrant/.janus/plugins/l9
+wget "https://github.com/dkoloditch/dotfiles/blob/master/vim-l9.zip"
 unzip vim-l9.zip
+cd /home/vagrant/.janus/plugins/
 git clone git@github.com:vim-scripts/FuzzyFinder.git
+
+# color schemes
+mkdir /home/vagrant/.vim/colors
+cd /home/vagrant/.vim/colors
+wget "https://raw.githubusercontent.com/joshdick/onedark.vim/master/colors/onedark.vim"
+
+# Vim-Tags (like Ctags)
+sudo yum install -y ctags
+cd /home/vagrant/vagrant_share
+ctags -R --exclude=temp --exclude=vendor --exclude=public
 
 # janus vimrc.after file for custom key bindings
 printf '
@@ -44,8 +60,3 @@ set colorcolumn=80
 " Turn off search highlighting
 " map <leader>oo :noh
 ' > /home/vagrant/.vimrc.after
-
-# Vim-Tags (like Ctags)
-sudo yum install -y ctags
-cd /home/vagrant/vagrant_share
-ctags -R --exclude=temp --exclude=vendor --exclude=public
