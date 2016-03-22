@@ -13,7 +13,8 @@ curl -L https://bit.ly/janus-bootstrap | bash
 # L9 + Fuzzy Finder
 mkdir /home/vagrant/.janus/plugins/l9
 cd /home/vagrant/.janus/plugins/l9
-wget "https://github.com/dkoloditch/dotfiles/blob/master/vim-l9.zip"
+wget "https://github.com/dkoloditch/dotfiles/blob/master/vim-l9.zip?raw=true"
+mv vim-l9.zip\?raw\=true vim-l9.zip
 unzip vim-l9.zip
 cd /home/vagrant/.janus/plugins/
 git clone git@github.com:vim-scripts/FuzzyFinder.git
